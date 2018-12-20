@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+
+   <head>
+      <title>URL Shortener</title>
+      <link rel="shortcut icon" href="https://cdn.hyperdev.com/us-east-1%3A52a203ff-088b-420f-81be-45bf559d01b1%2Ffavicon.ico" type="image/x-icon"/>
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+      <link href="/public/style.css" rel="stylesheet" type="text/css">
+   </head>
+
+   <body>
+      <header>
+    <h3>
+   API Project: URL Shortener Microservice
+    </h3>
+  </header>
+     <main>
+        <ul>
+          <li>I can POST a URL to <code>[project_url]/api/shorturl/new</code> and I will receive a shortened URL in the JSON response.<br>Example : <code>{"original_url":"www.google.com","short_url":1}</code></li>
+          <li>If I pass an invalid URL that doesn't follow the <code>http(s)://www.example.com(/more/routes)</code> format, the JSON response will contain an error like <code>{"error":"invalid URL"}</code><br>
+          HINT: to be sure that the submitted url points to a valid site you can use the function <code>dns.lookup(host, cb)</code> from the <code>dns</code> core module.</li>
+          <li>When I visit the shortened URL, it will redirect me to my original link.</li>
+        </ul>
+    
+       <hr>
+       <div class="examples">
+        
+        <ol>
+         Testing and Examples
+         <li>
+        <form action="api/shorturl/new" method="POST">
+          <label for="url_input">input URL to be shortened</label>
+          <input id="url_input" type="text" name="url" value="https://www.freecodecamp.com">
+          <input type="submit" value="POST URL">
+        </form>
+          </li>
+        <li>
+          post the URL to be shortened,for instance:  <code>https://www.freecodecamp.com</code>
+        </li>
+          <li> get the json with shortened URL on the screen
+          </li>
+       <div class="testing">
+          insert the link with short URL in the browser:
+        <a href="https://tough-fisherman.hyperdev.space/api/shorturl/2">
+          [this_project_url]/api/shorturl/[short_url]
+        </a><br>
+          <a href="https://tough-fisherman.glitch.me/api/shorturl/new">
+          [this_project_url]/api/shorturl/new
+        </a>
+          
+          </div> 
+        <li> 
+       <div class="output">
+         It will redirect to the URL you posted, it's:
+        <code>https://freecodecamp.com</code> for the case
+       </div>
+        </li>
+      
+         </ol>
+       </div>
+       </main>
+       <footer> coded by <a href="https://github.com/in44pavel">in44pavel</a> as a freecodecamp 
+       <a href="https://learn.freecodecamp.org/apis-and-microservices/apis-and-microservices-projects/url-shortener-microservice/">challenge</a> 
+    </footer>
+   </body>
+
+
+</html>
