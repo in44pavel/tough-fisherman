@@ -103,10 +103,10 @@ exports.processShortUrl = function (req, res) {
     }
     UrlEntries
       .findOne({"index": shurl}, function (err, data) {
-        if (err) console.log(shurl+"888");//return;
+        if (err) return;
         if (data){
           // redirect to the stored page
-         
+         console.log(data)
           res.redirect(data.url);
           
         } else {
