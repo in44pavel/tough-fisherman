@@ -12,6 +12,7 @@ var app = express();
 //install testing module available at narrow-plane.glitch.me
 app.use(cors());
 
+
 // Basic Configuration 
 var port = process.env.PORT || 3000;
 
@@ -19,6 +20,9 @@ var port = process.env.PORT || 3000;
 // mongoose.connect(process.env.MONGOLAB_URI);
 //Install & Set up mongoose
 mongoose.connect(process.env.MONGO_URI)
+
+
+
 
 //create SCHEMAS and MODELS for the DB
 /*1. create separate files w
@@ -29,14 +33,12 @@ mongoose.connect(process.env.MONGO_URI)
 app.use(bodyParser.urlencoded({extended: false}))
 
 
-
-//visualize 
-app.use('/public', express.static(process.cwd() + '/public'));
-
+//attach html
 app.get('/', function(req, res){
   res.sendFile(process.cwd() + '/views/index.html');
-});
-
+  });
+//visualize with css
+app.use('/public', express.static(process.cwd() + '/public'));
   
 // your first API endpoint, just to test (not needed for the project)
 app.get("/api/hello", function (req, res) {
